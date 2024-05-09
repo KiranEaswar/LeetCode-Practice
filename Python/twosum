@@ -1,0 +1,14 @@
+from typing import List
+class Solution:
+    def twosum(self, nums: List[int], target: int) -> List[int]:
+        val_storage = {}
+        for index, value in enumerate(nums):
+            complement = target - value
+            if complement in val_storage:
+                return [val_storage[complement],index]
+            else:
+                val_storage[value] = index
+        return []
+sol = Solution()
+result = sol.twosum([0,2,3,5,7],9)
+print(result)
